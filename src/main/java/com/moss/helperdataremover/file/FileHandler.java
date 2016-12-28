@@ -21,11 +21,13 @@ public class FileHandler {
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-        if (path.endsWith("HelperDataRemover/target/classes/")) {
-            filePath = path.replace("HelperDataRemover/target/classes/", "Helper");
-        }
-        else if (path.endsWith("helper-data-remover.jar")) {
-            filePath = path.replace("helper-data-remover.jar", "");
+        if (path != null) {
+            if (path.endsWith("HelperDataRemover/target/classes/")) {
+                filePath = path.replace("HelperDataRemover/target/classes/", "Helper");
+            }
+            else if (path.endsWith("helper-data-remover.jar")) {
+                filePath = path.replace("helper-data-remover.jar", "");
+            }
         }
         file = new File(filePath);
         return file;
